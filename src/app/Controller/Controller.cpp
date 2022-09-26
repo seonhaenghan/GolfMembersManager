@@ -76,7 +76,8 @@ void Controller::cardCheck(int state)
     {
         buzzerService->buzzerSound(state);
     }
-    else{
+    else
+    {
         buzzerService->buzzerSound(state);
     }
     

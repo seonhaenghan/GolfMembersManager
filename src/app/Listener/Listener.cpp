@@ -46,7 +46,5 @@ bool Listener::checkRfid()
     else{
         controller->cardCheck(0);
         return false;
-    }
-
-    
+    } 
 }

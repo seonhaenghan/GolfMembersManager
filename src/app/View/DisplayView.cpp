@@ -12,7 +12,8 @@ DisplayView::~DisplayView()
 
 void DisplayView::displayMode(int mode)
 {
-    char buff[30];
+    char buffFront[30];
+    char buffRear[30];
     char initbuff[30];
     switch(mode)
     {
@@ -22,9 +23,10 @@ void DisplayView::displayMode(int mode)
             lcd->WriteStringXY(0, 0, initbuff);
             lcd->WriteStringXY(1, 0, initbuff);
 
-            
-            sprintf(buff, "CARD READER");
-            lcd->WriteStringXY(1, 0, buff);
+            sprintf(buffRear, "MODE :");
+            sprintf(buffFront, "CARD READER");
+            lcd->WriteStringXY(0, 0, buffRear);
+            lcd->WriteStringXY(1, 0, buffFront);
         break;
 
         case CARD_REGISTER:
@@ -33,9 +35,10 @@ void DisplayView::displayMode(int mode)
             lcd->WriteStringXY(0, 0, initbuff);
             lcd->WriteStringXY(1, 0, initbuff);
 
-            
-            sprintf(buff, "CARD REGISTER");
-            lcd->WriteStringXY(1, 0, buff);
+            sprintf(buffRear, "MODE :");
+            sprintf(buffFront, "CARD REGISTER");
+            lcd->WriteStringXY(0, 0, buffRear);
+            lcd->WriteStringXY(1, 0, buffFront);
         break;
 
         case CARD_DELETE:
@@ -44,9 +47,10 @@ void DisplayView::displayMode(int mode)
             lcd->WriteStringXY(0, 0, initbuff);
             lcd->WriteStringXY(1, 0, initbuff);
 
-            
-            sprintf(buff, "CARD DELETE");
-            lcd->WriteStringXY(1, 0, buff);
+            sprintf(buffRear, "MODE :");
+            sprintf(buffFront, "CARD DELETE");
+            lcd->WriteStringXY(0, 0, buffRear);
+            lcd->WriteStringXY(1, 0, buffFront);
         break;
 
         case CARD_SEARCH:
@@ -55,8 +59,9 @@ void DisplayView::displayMode(int mode)
             lcd->WriteStringXY(0, 0, initbuff);
             lcd->WriteStringXY(1, 0, initbuff);
 
-            
-            sprintf(buff, "CARD SEARCH");
-            lcd->WriteStringXY(1, 0, buff);
+            sprintf(buffRear, "MODE :");
+            sprintf(buffFront, "CARD SEARCH");
+            lcd->WriteStringXY(0, 0, buffRear);
+            lcd->WriteStringXY(1, 0, buffFront);
     }
 }

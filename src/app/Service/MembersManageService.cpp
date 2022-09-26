@@ -24,19 +24,6 @@ void MembersManageService::updateStateEvent(std::string devName)
 {
     switch (membersManagerState)
     {
-        // case CARD_READER :
-        //     if (devName == "ModeButton") {
-        //         membersManagerState = CARD_REGISTER;
-        //         printf("changed to CARD_REGISTER State\n");
-        //     }
-        // break;
-        // case CARD_REGISTER :
-        //     if (devName == "ModeButton") {
-        //         membersManagerState = CARD_READER;
-        //         printf("changed to CARD_READER State\n");
-        //     }
-        // break;
-
         case CARD_READER :
             if (devName == "ModeButton") {
                 membersManagerState = CARD_REGISTER;
@@ -117,25 +104,17 @@ void MembersManageService::checkCardNumber(int *cardNum)    // 카드를 찍었�
             else
             {
                 idSet++;
-                tempMember.id = idSet; // begin()을 써서 가장 뒤에 있는 id값 +1을 적용 
-                //sprintf(buff, "Name : ");
-                //comDev->sendData(buff);
-                printf("Name : ");
-                scanf("%s", tempMember.name);
+                tempMember.id = idSet; 
 
-                // sprintf(buff,"Address Ex)xxxDong-xxxHo : ");
-                // comDev->sendData(buff);
+                printf("Name : ");
+                //scanf("%s", tempMember.name);
+
                 printf("Address Ex)xxxDong-xxxHo : ");
                 scanf("%s", tempMember.address);
 
-                // sprintf(buff,"Phone Num. Ex)010-xxxx-xxxx :");
-                // comDev->sendData(buff);
                 printf("Phone Num. Ex)010-xxxx-xxxx :");
-                scanf("%s", tempMember.phoneNumber);    //>> scanf가 아니라 console에서 입력 받아야함 
-                /* text code*/
-                // strcpy(tempMember.name, "LeeSoonShin");
-                // strcpy(tempMember.address, "101Dong 123Ho");
-                // strcpy(tempMember.phoneNumber, "010-1234-5678");
+                scanf("%s", tempMember.phoneNumber);
+
                 memcpy(tempMember.cardNum, cardNum, sizeof(tempMember.cardNum));
                 membersEntity->addMemberInfo(tempMember);
                 printf("Member Registered!\n");
