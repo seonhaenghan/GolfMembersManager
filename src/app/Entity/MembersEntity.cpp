@@ -12,7 +12,7 @@ MembersEntity::~MembersEntity()
 
 void MembersEntity::loadMembersInfo()
 {
-    fpDBData = fopen("memberLists.bin", "r"); //NULL
+    fpDBData = fopen("memberLists.bin", "r"); 
     if (fpDBData == NULL) {
         fprintf(stderr, "file open error!\n");
         return;

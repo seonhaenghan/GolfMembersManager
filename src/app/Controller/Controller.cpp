@@ -36,6 +36,8 @@ void Controller::updateEvent(DeviceData data)
 
 void Controller::updataClientmesg(char *buff)
 {
+    membersManageService->buffData(buff);
+    
     const char *comBuffReader = "READER";
     const char* comBuffRegister = "REGISTER";
     const char* comBuffDelete = "DELETE";

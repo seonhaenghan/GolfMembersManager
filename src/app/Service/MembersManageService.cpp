@@ -150,3 +150,8 @@ void MembersManageService::checkCardNumber(int *cardNum)    // 카드를 찍었�
     
 }
 
+
+void MembersManageService::buffData(char *buff)
+{
+    tempBuff = buff;
+}

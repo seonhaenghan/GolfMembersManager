@@ -14,6 +14,8 @@ private:
     int membersManagerState;
     MembersEntity *membersEntity;
     ComDev  *comDev;
+    char *tempBuff;
+
 
 public:
     MembersManageService(ComDev *comDev);
@@ -22,6 +24,7 @@ public:
     void updateStateEvent(std::string devName);
     void checkCardNumber(int *cardNum);
     void updateStateMesg(int state);
+    void buffData(char *buff);
 };
 
 #endif /* __MEMBERSMANAGESERVICE_H__ */
